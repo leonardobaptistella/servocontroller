@@ -1,8 +1,5 @@
 # Função de varredura de ambiente com a câmera
 
-from logging.config import valid_ident
-
-
 def varredura(t, theta_i, theta_f, p_servo):
     servo = Servo(p_servo)
     val_i = -1+(theta_i/9)*0.1

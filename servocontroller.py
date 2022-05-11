@@ -9,7 +9,7 @@ import controle
 error = 0 
 
 # String de operção - teste
-in_str = "v;20;90;180"  # String de entrada
+#in_str = "v;20;90;180"  # String de entrada
 
 # Parser da string de operação
 par =  in_str.split(";")
