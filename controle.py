@@ -1,30 +1,46 @@
 # Função de controle manual da câmera
 
-def controle(dir,p_servo):
+def controle(dir,alt,p_servo1,p_servo2):
 
-    servo = Servo(p_servo)
-    val = 0
+    servo1 = Servo(p_servo1)
+    servo2 = Servo(p_servo2)
+    
+    val1 = 0
 
-    i = 0
-    j = 0
-    teste = dir
+    teste1 = dir
+    teste2 = alt
 
-    if teste == '1':
-        if val <= 0.8:
-            for i in range(1):
-                val = val+0.1
-                servo.value = val
-                sleep(0.5)
-                #print(val)
+    if teste1 == '1':
+        if val1 <= 0.8:
+            val1 = val1+0.1
+            servo1.value = val1
+            sleep(0.5)
+            #print(val)
         else:
-            servo.value = val
-    if teste == '0':
-        if val >= -0.8:
-            for i in range(1):
-                val = val-0.1
-                servo.value = val
-                sleep(0.5)
-                #print(val)
+            servo1.value = val1
+    if teste1 == '0':
+        if val1 >= -0.8:
+            val1 = val1-0.1
+            servo1.value = val1
+            sleep(0.5)
+            #print(val)
         else:
-            servo.value = val
+            servo1.value = val1
+
+    if teste2 == '1':
+        if val2 <= 0.8:
+            val2 = val2+0.1
+            servo2.value = val2
+            sleep(0.5)
+            #print(val)
+        else:
+            servo2.value = val2
+    if teste2 == '0':
+        if val2 >= -0.8:
+            val2 = val2-0.1
+            servo2.value = val2
+            sleep(0.5)
+            #print(val)
+        else:
+            servo2.value = val2
 
