@@ -20,8 +20,8 @@ pwm.set_PWM_frequency( servo_H, 50 )
 pwm.set_mode(servo_V, pigpio.OUTPUT)
 pwm.set_PWM_frequency( servo_V, 50 )
 
-
-def func(x): #Retorna o valor em segundos da rotacao em graus desejada
+#Retorna o valor em segundos da rotacao em graus desejada
+def func(x): 
     return ((2500-500)/(180-0))*x+500 #Funcao de primeiro grau
 
 # Posiciona os servos em um angulo fixo dado na entrada da função
@@ -38,13 +38,6 @@ def Angulo(angulo_H=0,angulo_V=0,slp=1):
            pwm.set_servo_pulsewidth( servo_H, func(float(angulo_H))) ;
            pwm.set_servo_pulsewidth( servo_V, func(float(angulo_V))) ;
            time.sleep( slp )
-
-
-#------------------------------------------------------------------------     
-
-#pwm.set_servo_pulsewidth( servo_H, func(float(angulo_H)))
-
-#---------------------------------------------------------------------------------------------
 
 
 # Incrementa ou decrementa a posição do servo
@@ -68,6 +61,7 @@ def Controle_manua (dir, ang1, ang2):
     time.sleep(0.5)
     print(ang1, ang2)
     return(ang1, ang2)
+
 # Varre de 0 a 180
 def Varredura(servo): 
     if(servo == "H"): #Servo Horizontal
